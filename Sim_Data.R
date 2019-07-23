@@ -8,8 +8,8 @@ library(tidyr)
 
 x1 <- rnorm(50, -1, 0.25)
 x2 <- rnorm(50, 1, 0.25)
-y1 <- rnorm(50,0,0.25)
-y2 <- rnorm(50,2,0.1)
+y1 <- rnorm(50,-2,0.25)
+y2 <- rnorm(50,2,0.25)
 
 
 
@@ -21,7 +21,7 @@ y <- c(y1,y2)
 data1 <- data.frame("x" = x1, "y" = y1)
 data2 <- data.frame("x" = x2, "y" = y2)
 
-plot(data1,pch = 16,col="red", xlim = c(min(x1),max(x2)), ylim = c(min(y1),max(y2)))
+plot(data1,pch = 16,col="red", xlim = c(min(x),max(x)), ylim = c(min(y),max(y)))
 points(data2,pch = 16,col="blue")
 
 
@@ -34,7 +34,7 @@ ymean <- mean(y)
 
 slope <- -(x2mean-x1mean)/(y2mean-y1mean)
 
-intercept <- xmean - ymean/slope
+intercept <- xmean - (ymean/slope)
 
 abline(intercept, slope)
 
